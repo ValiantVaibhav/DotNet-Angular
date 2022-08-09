@@ -1,0 +1,25 @@
+<div class="card">
+<div class="card-img-wrapper">
+  <img
+    class="card-img-top"
+    src="../../../assets/image/house-default.jpg"
+    alt="House image"
+  />
+
+  <ul class="list-inline text-center button-overlay animate">
+    <li class="list-inline-item">
+      <button class="btn btn-primary" routerLink="property-details/{{property.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
+    </li>
+    <li class="list-inline-item">
+      <button class="btn btn-primary"><i class="fa-solid fa-address-book"></i></button>
+    </li>
+  </ul>
+</div>
+
+
+  <div class="card-body p-2">
+    <h1>{{ property.name }}</h1>
+    <h1>{{ property.type }}</h1>
+    <h1>{{ property.price }}</h1>
+  </div>
+</div>

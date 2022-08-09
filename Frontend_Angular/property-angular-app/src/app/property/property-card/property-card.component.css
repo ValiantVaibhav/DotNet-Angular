@@ -1,0 +1,40 @@
+h1 {font-size:2vw;}
+
+.card-img-wrapper{
+  overflow: hidden;
+  position: relative;
+}
+
+.button-overlay{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30;
+  margin-right: auto;
+  margin-left: auto;
+}
+.card-img-wrapper:hover .button-overlay{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.card:hover img{
+  transform: scale(1.09,1.09);
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+
+  opacity: 0.5;
+
+}
+
+
+.animate{
+
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+

@@ -1,0 +1,37 @@
+[{
+  "id" : "1",
+  "name" : "Coastal Villa",
+  "type" : "Villa",
+  "price" : "1 crore"
+},{
+  "id" : "2",
+  "name" : "Ashoka  Aisle",
+  "type" : "Aisle",
+  "price" : "4 crore"
+},{
+  "id" : "3",
+  "name" : "Seaview Cottage",
+  "type" : "Cottage",
+  "price" : "3 crore"
+},{
+  "id" : "4",
+  "name" : "Mudra House",
+  "type" : "House",
+  "price" : "1 crore"
+},{
+  "id" : "5",
+  "name" : "Lotus Apartment",
+  "type" : "Apartment",
+  "price" : "50 lacs"
+},{
+  "id" : "6",
+  "name" : "Kela Bhawan",
+  "type" : "Bungalow",
+  "price" : "1 crore"
+},{
+  "id" : "7",
+  "name" : "Coastal Villa",
+  "type" : "Villa",
+  "price" : "1 crore"
+}
+]
