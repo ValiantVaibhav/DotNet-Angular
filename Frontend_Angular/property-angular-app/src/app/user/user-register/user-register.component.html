@@ -1,0 +1,66 @@
+<br>
+<div class="row">
+  <div class="col-sm-6" style="margin:auto">
+    <div class="card">
+      <div class="card-header">
+        <b>Registeration Form</b>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="registerationForm" (ngSubmit)="onSubmit(registerationForm)">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="userName">
+            <span class="error-block" *ngIf="registerationForm.get('userName').invalid && (registerationForm.get('userName').dirty || registerationForm.get('userName').touched || formSubmitted == true)"> Please enter a valid name.</span>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="userEmail">
+            <span class="error-block" *ngIf="!getUserEmail.valid && (getUserEmail.touched || formSubmitted == true)">
+              <span *ngIf="getUserEmail.hasError('required')">Please provide email id.</span>
+              <span *ngIf="getUserEmail.hasError('email')">Invalid Email ID. Please enter correct email Id.</span>
+            </span>
+
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+            <span class="error-block" *ngIf="registerationForm.get('password').invalid && (registerationForm.get('password').dirty || registerationForm.get('password').touched) || formSubmitted == true"> Password should be of atleast 6 characters.</span>
+
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="password" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmPassword">
+
+            <span class="error-block" *ngIf="!getConfirmPassword.valid && (getConfirmPassword.touched || formSubmitted == true)">
+              <span *ngIf="getConfirmPassword.hasError('required')">Please confirm password.</span>
+              </span>
+
+              <span class="error-block" *ngIf="registerationForm.hasError('mismatched') && getConfirmPassword.valid">Password Not matched.</span>
+              <span class="success-block" *ngIf="registerationForm.errors==null && getConfirmPassword.valid">Password Matched</span>
+
+              <!-- {{registerationForm.hasError('mismatched')}}
+              {{getConfirmPassword.valid}} -->
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="mobile" class="form-label">Mobile</label>
+            <input type="number" class="form-control" formControlName="mobile" maxlength="10">
+            <span class="error-block" *ngIf="!registerationForm.get('mobile').valid && (registerationForm.get('mobile').touched || formSubmitted == true)">
+              <span *ngIf="getMobile.errors['required']">Mobile number can't be empty.</span>
+               </span>
+               <span *ngIf="getMobile.errors.maxlength">Mobile Number must not exceed 10 digits</span>
+maxl{{getMobile.errors.maxlength}}
+          </div>
+          <br>
+          <div class="form-group">
+            <button class="btn btn-primary" style="margin-right: 10px" type="submit">Submit</button>
+            <button class="btn btn-primary" type="reset">Clear All Fields</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,18 @@
 <p>
-  property-details works! {{propertyId}}
+  property-details works! {{ propertyId }}
+  <button class="btn btn-primary" (click)="onSelectNextButton()">
+    Go To Next Page
+  </button>
+
+  <!--Pagination-->
+  <!-- This router link is calling its own component. Angular do not refresh the properties
+    values in component if its getting asked to changed from the same component itself via
+    url Routing.
+  So subscribe method in ngOninit() should be used to update the property in the same
+  component where it is being called.
+Subscribe method will run only when there is a change in the data(here params) get changed
+on the Route of this component-->
+  <button class="btn btn-warning" routerLink="/property-details/1">1</button>
+  <button class="btn btn-warning" routerLink="/property-details/2">2</button>
+  <button class="btn btn-warning" routerLink="/property-details/3">3</button>
 </p>

@@ -26,12 +26,38 @@
         </li> -->
         <li class="nav-item">
           <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="add-property">List properties</a>
+
         </li>
+
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+    <div style="margin-right: 50px">
+      <ul class="nav navbar-nav">
+        <li class="nav-item" *ngIf="!loggedIn()">
+          <a class="nav-link" routerLink="user/register" routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="!loggedIn()">
+          <a class="nav-link" routerLink="user/login" routerLinkActive="active">Login</a>
+        </li>
+        <div *ngIf="loggedIn()" class="dropdown mr-10" dropdown>
+          <a href="" class="dropdown-toggle text-light" dropdownToggle (click)="false">Welcome {{userLoggedIn}}</a>
+          <div class="dropdown-menu" *dropdownMenu="">
+            <a href="" class="dropdown-item"><i class="fas fa-tachometer-alt"></i>View Dashboard</a>
+            <a href="" class="dropdown-item"><i class="far fa-user-circle"></i>My profile</a>
+            <a href="" class="dropdown-item"><i class="fas fa-key"></i>Change Password</a>
+            <a href="" class="dropdown-item" (click)="onLogout()"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </div>
+        </div>
+
+
+
+
+      </ul>
+    </div>
+
+
+
+
     </div>
   </div>
 </nav>

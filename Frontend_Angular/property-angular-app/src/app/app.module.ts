@@ -13,12 +13,29 @@ import { AddPropertyComponent } from './property/add-property/add-property.compo
 import {Routes, RouterModule} from '@angular/router';
 import { RentPropertyComponent } from './property/rent-property/rent-property.component';
 import { PropertyDetailsComponent } from './property/property-details/property-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserServiceService } from './services/user-service.service';
+import { AlertifyService } from './services/Alertify.service';
+import { AuthService } from './services/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 const appRoutes:Routes = [
   {path: '', component: PropertyListComponent},
   {path: 'add-property', component: AddPropertyComponent},
-  {path: 'rent-property', component: RentPropertyComponent},
+  {path: 'rent-property', component: PropertyListComponent},
   {path: 'property-details/:id', component: PropertyDetailsComponent},
+  {path: 'user/login', component:UserLoginComponent},
+  {path:'user/register', component:UserRegisterComponent},
+  {path: '**', component: PageNotFoundComponent},
+
+
 ]
 
 @NgModule({
@@ -30,13 +47,24 @@ const appRoutes:Routes = [
       AddPropertyComponent,
       RentPropertyComponent,
       PropertyDetailsComponent,
+      PageNotFoundComponent,
+      UserLoginComponent,
+      UserRegisterComponent
+
    ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
-  providers: [HousingService],
+  providers: [HousingService, UserServiceService, AlertifyService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

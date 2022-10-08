@@ -1,8 +1,17 @@
 h1 {font-size:2vw;}
 
+.card{
+  min-height: 400px;
+}
 .card-img-wrapper{
   overflow: hidden;
   position: relative;
+  height: auto;
+}
+
+.card-img-wrapper img{
+  height: 150px;
+  width: 380px;
 }
 
 .button-overlay{
@@ -31,7 +40,6 @@ h1 {font-size:2vw;}
 
 
 .animate{
-
   transition: all 0.3s ease-in-out;
 }
 

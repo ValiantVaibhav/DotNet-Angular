@@ -1,0 +1,52 @@
+.error-block{
+  color: red;
+  font-size: 13px;
+}
+.success-block{
+  color: green;
+  font-size: 13px;
+}
+
+.ng-invalid .ng-touched{
+  /* this will highlight the input box when skipping any input box without entering value */
+  border-color: red;
+  }
+
+  .secondButton{
+    margin-left: 10px;
+  }
+
+  .photo-control{
+    min-height: 300px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px dashed blue;
+    margin: 5px;
+  }
+
+  .btn-group > label[ng-reflect-btn-radio]{
+    border-radius: 44px;
+    padding: 0 15px;
+    line-height: 30px;
+
+  }
+  .btn-group>.btn:not(:first-child){
+    margin-left: 10px;
+  }
+
+  .form-group{
+    margin: 10px;
+  }
+  .form-control{
+    margin-top: 5px;
+  }
+
+  .card-header > h1, .card-header > h2, .card-header > h3{
+    color: white;
+  }
+
+  .card-header{
+    height: 60px;
+    padding: 4px 20px !important;
+    background-color: #007bff;
+  }
